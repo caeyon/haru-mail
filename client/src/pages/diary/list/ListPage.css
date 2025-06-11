@@ -1,0 +1,170 @@
+/* 사용자 이름과 날짜를 위한 컨테이너 */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem; /* 간격 조정 */
+}
+
+/* 전체 레이아웃 */
+.webpage-layout {
+  flex: 1;
+  font-family: 'Pretendard', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.webpage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.header-container h2 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: normal;
+  margin-top: -2rem;
+  margin-bottom: 5rem;
+}
+
+.username {
+  font-weight: bold;
+  color: inherit;
+  font-size: inherit;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: clamp(250px, 80vw, 600px);
+  margin: 2rem auto 2.5rem auto;
+  font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+  color: #333;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: clamp(1.5rem, 4.5vw, 2.2rem);
+  cursor: pointer;
+  color: #333;
+  padding: 0 3rem;
+  transition: color 0.2s ease;
+}
+
+.arrow:hover {
+  color: #000;
+}
+
+.month-label {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: bold;
+}
+
+.diary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  margin-bottom: 4rem;
+  width: clamp(300px, 90vw, 1200px);
+  align-items: center;
+  overflow-y: auto;
+}
+
+/* 일기 항목 */
+.diary-item {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  padding: clamp(1rem, 1.3vw, 1rem);
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s ease;
+  gap: clamp(1rem, 1.5vw, 1.8rem);
+}
+
+.diary-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.date-tag {
+  background-color: #e60023;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: 700;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  text-align: center;
+  line-height: 1;
+  width: clamp(30px, 10vw, 45px);
+  height: clamp(30px, 10vw, 45px);
+  font-size: clamp(1.5rem, 1.5vw, 1.5rem);
+}
+
+.diary-title {
+  flex-grow: 1;
+  font-size: clamp(1.8rem, 2vw, 2rem);
+  font-weight: 600;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-right: 0.3rem;
+  padding-left: 2rem;
+}
+
+.write-button {
+  background-color: #e60023;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  margin-top: 3.5rem;
+  margin-bottom: 6%;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-size: 18px;
+  padding: 0.75rem 1.5rem;
+  width: clamp(180px, 45vw, 250px);
+  height: clamp(40px, 15vw, 55px);
+}
+
+.write-button:hover,
+.query-button:hover {
+  background-color: #d5001c;
+  transform: scale(1.1);
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: #e60023;
+  font-weight: bold;
+}
+
+.empty{
+  font-size: clamp(1.8rem, 2vw, 2rem);
+}

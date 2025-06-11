@@ -1,0 +1,267 @@
+/* HTML의 기본 폰트 크기 설정 */
+html {
+    font-size: 62.5%;
+}
+
+/* 메인 콘텐츠 영역 */
+.main-content {
+    padding: clamp(4rem, 8vw, 10rem);
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* 검색창 영역 */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: clamp(2rem, 5vw, 5rem);
+    max-width: 90rem;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 검색 버튼 */
+.search-button {
+    padding: clamp(1.2rem, 1.5vw, 1.8rem) clamp(2rem, 3vw, 3.5rem);
+    border: 0.2rem solid #999;
+    border-left: none;
+    border-radius: 0 clamp(2.5rem, 3.5vw, 4rem) clamp(2.5rem, 3.5vw, 4rem) 0;
+    background-color: white;
+    cursor: pointer;
+    font-size: clamp(1.7rem, 2vw, 2rem);
+    flex-shrink: 0;
+}
+
+/* 카테고리 버튼들을 감싸는 영역 */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 2vw, 2.5rem);
+    margin-bottom: clamp(1.5rem, 2.5vw, 3rem);
+    flex-wrap: wrap;
+    padding: 0 clamp(2rem, 5vw, 5rem);
+}
+
+/* 카테고리 버튼 기본 스타일 */
+.category {
+    padding: clamp(0.4rem, 1.3vw, 1.5rem) clamp(0.2rem, 0.5vw, 1.5rem);
+    border-radius: 0;
+    background-color: transparent;
+    color: #bababa;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: clamp(1.3rem, 2.1vw, 2rem);
+    outline: none;
+    flex-shrink: 0;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* 선택된 카테고리 버튼 스타일 */
+.category.active {
+    background-color: transparent;
+    color: #eb1c24;
+    text-decoration: underline;
+    outline: none;
+}
+
+/* 카테고리 버튼 호버 스타일 */
+.category:not(.active):hover {
+    background-color: transparent;
+    color: #555;
+    text-decoration: underline;
+    outline: none;
+}
+
+/* 태그 버튼 기본 스타일 */
+.tag-button {
+    padding: clamp(0.6rem, 0.9vw, 0.9rem) clamp(1.5rem, 2.5vw, 3rem);
+    border-radius: clamp(2rem, 3.5vw, 3.5rem);
+    background-color: white;
+    color: #333;
+    border: 0.15rem solid #D0D0D0;
+    font-size: clamp(1.6rem, 1.8vw, 1.8rem);
+    font-weight: bold;
+    cursor: pointer;
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* 태그 버튼 호버 스타일 */
+.tag-button:hover {
+    background-color: #eb1c24;
+    color: white;
+    border: 0.2rem solid #eb1c24;
+}
+
+/* 선택된 태그 버튼 스타일 */
+.tag-button.active {
+    background-color: rgba(235, 28, 36, 0.15);
+    color: #eb1c24;
+    border: 0.15rem solid #eb1c24;
+}
+
+/* 태그 영역 */
+.tag-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: clamp(2rem, 3vw, 3rem);
+    gap: clamp(1rem, 1.5vw, 1.5rem);
+    padding: 0 clamp(2rem, 5vw, 5rem);
+}
+
+/* 질문 카드 전체 스타일 */
+.question-card {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: clamp(0.7rem, 1.7vw, 1.7rem);
+    border-radius: clamp(0.8rem, 1.2vw, 1.2rem);
+    margin: 0 clamp(4rem, 6vw, 6rem) clamp(2rem, 3vw, 3rem);
+    animation: fadeSlideIn 0.5s ease forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* 질문 카드 안의 날짜 박스 */
+.date-box {
+    background-color: #E53935;
+    color: white;
+    width: clamp(5rem, 6vw, 6rem);
+    height: clamp(5rem, 6vw, 6rem);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: clamp(1.8rem, 2vw, 2rem);
+    margin-right: clamp(2rem, 3vw, 3rem);
+}
+
+/* 질문 텍스트 */
+.question-text {
+  flex-grow: 1;
+  font-size: clamp(2rem, 2vw, 2rem);
+  font-weight: 600;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-right: 0.5rem;
+}
+
+/* 페이드 인 슬라이드 애니메이션 */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(2.5rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 질문 카드 호버 스타일 */
+.question-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+/* 검색 결과 없음 메시지 */
+.no-results-message {
+    text-align: center;
+    margin-top: clamp(3.5rem, 5vw, 5rem);
+    font-size: clamp(1.8rem, 2.2vw, 2.2rem);
+    color: #888;
+}
+
+/* 일기 그룹 */
+.diary-group {
+    /* margin-top: 2rem; */
+}
+
+/* 일기 그룹 타이틀 */
+.diary-group-title {
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: bold;
+    margin-bottom: clamp(0.8rem, 1vw, 1rem);
+    padding: 0 clamp(4rem, 6vw, 6rem);
+}
+
+/* 구분선 */
+hr {
+    border: none;
+    border-top: 0.1rem solid #ccc;
+    margin-bottom: clamp(1.5rem, 1.8vw, 1.8rem);
+    margin-left: clamp(4rem, 6vw, 6rem);
+    margin-right: clamp(4rem, 6vw, 6rem);
+}
+
+/* 선택된 태그를 보여주는 컨테이너 */
+.selected-tags-container {
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 1;
+    max-height: clamp(10rem, 20vh, 20rem);
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: clamp(1.2rem, 1.5vw, 1.8rem) clamp(1.8rem, 2.5vw, 3rem);
+    border: 0.2rem solid #999;
+    border-radius: clamp(2.5rem, 3.5vw, 4rem) 0 0 clamp(2.5rem, 3.5vw, 4rem);
+    background-color: white;
+    font-size: clamp(1.6rem, 1.8vw, 1.8rem);
+    gap: clamp(0.8rem, 1.2vw, 1.2rem);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* WebKit (Chrome, Safari) 브라우저용 스크롤바 숨기기 */
+.selected-tags-container::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+/* 선택된 태그 개별 요소 */
+.selected-tag {
+    background-color: white;
+    border: 0.2rem solid #eb1c24;
+    color: #333;
+    border-radius: clamp(2rem, 3.5vw, 3.5rem);
+    padding: clamp(0.5rem, 0.8vw, 0.8rem) clamp(1rem, 1.5vw, 1.8rem);
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    gap: clamp(0.5rem, 0.7vw, 0.7rem);
+    font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+    flex-shrink: 0;
+}
+
+/* 선택된 태그의 제거 버튼 */
+.remove-tag-button {
+    background: none;
+    border: none;
+    color: #eb1c24;
+    cursor: pointer;
+    font-size: clamp(1.5rem, 1.7vw, 1.7rem);
+    padding: 0;
+}
+
+/* 제거 버튼 호버 스타일 */
+.remove-tag-button:hover {
+    color: black;
+}
+
+/* 플레이스홀더 텍스트 */
+.placeholder-text {
+    color: #999;
+    font-size: clamp(1.6rem, 1.9vw, 1.9rem);
+}

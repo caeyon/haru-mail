@@ -1,0 +1,147 @@
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 레이아웃 */
+.webpage-layout {
+  font-family: 'Pretendard', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.webpage-header .header-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #333;
+  padding: 0.5rem 0;
+}
+
+.menu-buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.mail-setting-main {
+  flex: 1;
+  width: 100%;
+  padding: 6% 10%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu span {
+  cursor: pointer;
+}
+
+.menu .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.mail-setting-content {
+  padding: 3rem 2rem;
+  width: 100%;
+  position: relative;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 3rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+}
+
+.form label {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.submit-button {
+  position: absolute;
+  bottom: -3rem;
+  right: 2rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  background-color: #e60023;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #d5001c;
+  transform: scale(1.1);
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.radio-input {
+  display: none;
+}
+
+.custom-radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #999;
+  border-radius: 50%;
+  position: relative;
+  transition: border-color 0.3s;
+}
+
+.radio-input:checked + .custom-radio {
+  border-color: #e60023; /* 체크 시 테두리 색상 */
+}
+
+.radio-input:checked + .custom-radio::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  background-color: #e60023; /* 체크 색상 */
+  border-radius: 50%;
+}

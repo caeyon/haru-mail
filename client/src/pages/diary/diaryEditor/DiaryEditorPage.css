@@ -1,0 +1,336 @@
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* #root 영역에서 스크롤 제어 */
+#root {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* body와 html의 설정 */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* 전체 페이지 */
+.diary-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+    align-items: flex-start;
+}
+
+/* 메인 콘텐츠 */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px !important;
+    background-color: white;
+    width: 100%;
+}
+
+/* 제목 */
+.title-block {
+    margin-bottom: 20px;
+}
+
+.editor-title {
+    font-size: 24px !important;
+    font-weight: bold;
+    margin-top: 10px !important;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.title-input {
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    width: 100%;
+    margin-top: 10px !important;
+    margin-bottom: 8px !important;
+    padding: 5px 0;
+    height: 32px;
+    line-height: 1.2;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.editor-date {
+    color: #999;
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* editor.js */
+.diary-textarea {
+    flex: 1;
+    width: 100%;
+    max-height: 500px;
+    padding: 20px;
+    font-size: 20px;
+    border: 2px solid #B0ACAC;
+    border-radius: 8px;
+    resize: none;
+    margin-bottom: 20px;
+    overflow-y: auto;
+}
+
+/* 에디터를 감싸는 div 스타일 */
+.editor-container {
+    width: 100%;
+    height: 450px !important;
+    margin: 0 auto;
+    border: 2px solid #B0ACAC;
+    border-radius: 8px;
+    padding: 20px 60px 20px 60px;
+    box-sizing: border-box;
+    font-size: 20px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* 전체 블록의 중앙 정렬 해제 */
+.editor-container .ce-block,
+.editor-container .cdx-block {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+}
+
+/* 에디터 내부 텍스트 블록 */
+.editor-container .ce-paragraph {
+    width: 1100px !important;
+    max-width: 1100px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box;
+    text-align: left !important;
+}
+
+/* 버튼 관련 스타일 */
+.button-wrapper {
+    position: relative;
+    text-align: right;
+}
+
+.submit-button {
+    background-color: #eb1c24;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #c6171d;
+    transform: scale(1.1);
+}
+
+/* 모달 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal {
+    background: white;
+    padding: 24px 32px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-size: 18px;
+}
+
+.modal-close-button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background-color:  #eb1c24;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 80px;
+}
+
+.modal-close-button:hover {
+    background-color: #c6171d;
+    transform: scale(1.1);
+}
+
+
+/* 태그 */
+.tag-section {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.selected-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px !important;
+    margin-top: 0px !important;
+}
+
+.tag {
+    background-color: white;
+    color: #333;
+    border: 0.2rem solid #eb1c24;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-weight: bold;
+}
+
+.tag:hover {
+    background-color: #eb1c24;
+    color: white;
+}
+
+/* 카테고리 */
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category {
+    padding: 10px 18px;
+    font-size: 15px;
+    border-radius: 20px;
+    border: 2px solid #eb1c24;
+    background-color: #ffecec;
+    color: #eb1c24;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* 선택된 카테고리 버튼 (active 상태) */
+.category.active {
+    background-color: #eb1c24;
+    color: white;
+    border-color: #eb1c24;
+}
+
+.category:hover {
+    background-color: #eb1c24;
+    color: white;
+}
+
+.add-category-button {
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 20px;
+    background-color: white;
+    color: #333;
+    border: 0.15rem solid #D0D0D0;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 8px;
+    transition: background-color 0.2s;
+}
+
+.add-category-button:hover {
+    background-color: #eb1c24;
+    color: white;
+}
+
+/* 카테고리 태그 */
+.category-tag {
+    background-color: white;
+    color: #333;
+    padding: 6px 12px;
+    margin: 4px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 0.15rem solid #D0D0D0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    flex-wrap: wrap;
+    gap: 10px;
+    display: inline-flex;
+}
+
+.category-tag:hover {
+    background-color: #eb1c24;
+    color: white;
+}
+
+/* 선택된 카테고리 버튼 (active 상태) */
+.category-tag.active {
+    background-color: rgba(235, 28, 36, 0.15);
+    color: #eb1c24;
+    border: 0.15rem solid #eb1c24;
+}
+
+/* 카테고리 생성 */
+.new-tag-input {
+    padding: 10px 14px;
+    margin: 8px 8px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    width: 220px;
+    font-size: 16px;
+    outline: none;
+}
+
+.modal-button-group {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    margin-top: 10px;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    font-size: 1.5rem;
+    color: #e60023;
+    font-weight: bold;
+}
